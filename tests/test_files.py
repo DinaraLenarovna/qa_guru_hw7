@@ -28,9 +28,8 @@ def test_csv():
 
 def test_pdf():
     with zipfile.ZipFile(ZIP_DIR, 'r') as zip_file:
-        with zip_file.open("pdf_example.pdf") as pdf_file:
+        with zip_file.open("pdf_test.pdf") as pdf_file:
             reader = PdfReader(pdf_file)
             page = reader.pages[0]
             text = page.extract_text()
-            assert 'Это пример PDF-файла' in text
-
+            assert 'Башкирский химический журнал' in text
